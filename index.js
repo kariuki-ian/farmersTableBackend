@@ -1,5 +1,4 @@
-
-const cors = require('cors');
+const cors = require("cors");
 const express = require("express");
 const mongoose = require("mongoose");
 const userRoutes = require("./routes/users");
@@ -17,6 +16,7 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
+app.get("/", (req, res) => res.send("Express on Vercel"));
 app.use("/users", userRoutes);
 app.use("/products", productRoutes);
 app.use("/orders", orderRoutes);
